@@ -1,0 +1,20 @@
+STUDYHUB GHANA — WEBSITE PREVIEW
+
+This ZIP contains a mobile-friendly front-end prototype for:
+- JHS / BECE and SHS / WASSCE students
+- GH₵20 / 30-day subscription concept
+- Subject and learning-tool overview
+- Sample quiz interaction
+- AI tutor interface preview
+- Student registration/login interface preview
+
+IMPORTANT: This is a visual/interactive prototype, not a live subscription platform.
+Before accepting payments or student information, it needs:
+1. Secure server-side customer accounts and password handling.
+2. Payment submission and manual MTN MoMo verification workflow.
+3. Subscription expiry and access enforcement.
+4. AI API integration through a server-side function (never expose an AI key in browser code).
+5. Curriculum-aligned content library, reviewed for accuracy.
+6. Age-appropriate privacy protections for JHS/SHS students.
+
+The site is designed to be deployable as a static preview on Netlify. The live backend can be added using Netlify Functions and secure environment variables; Supabase is not required.

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StudyHub Ghana | Learn Better</title>
+<meta name="theme-color" content="#102a43">
+<style>
+:root{--navy:#102a43;--blue:#1769aa;--mint:#dff7ee;--gold:#ffc857;--bg:#f4f7fb;--card:#fff;--ink:#172b4d;--muted:#64748b;--line:#e3eaf2}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px system-ui,-apple-system,Segoe UI,sans-serif}
+header{background:var(--navy);color:white;padding:15px max(18px,calc((100% - 1100px)/2));display:flex;align-items:center;justify-content:space-between;gap:14px;position:sticky;top:0;z-index:3}
+.logo{font-weight:950;font-size:20px;letter-spacing:.3px}.logo span{color:var(--gold)}nav{display:flex;gap:8px;flex-wrap:wrap}button,.btn{border:0;border-radius:10px;padding:11px 15px;font-weight:750;cursor:pointer;background:var(--blue);color:white;text-decoration:none;display:inline-block}button.alt{background:#ffffff18;color:white;border:1px solid #ffffff44}
+main{max-width:1100px;margin:auto;padding:24px 18px}.hero{background:linear-gradient(120deg,#102a43,#1769aa);color:white;border-radius:22px;padding:clamp(25px,6vw,55px);display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:center}
+.hero h1{font-size:clamp(34px,6vw,58px);line-height:1.04;margin:8px 0 15px}.hero p{color:#e1edf8;max-width:580px}.badge{display:inline-block;background:#ffffff20;border:1px solid #ffffff45;border-radius:99px;padding:7px 12px;font-weight:700;font-size:13px}
+.pricebox{background:white;color:var(--ink);border-radius:18px;padding:22px}.price{font-size:36px;font-weight:900}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:19px;margin:14px 0}.card h3{margin:4px 0 8px}.section-title{margin:32px 0 10px}.icon{font-size:25px}.subject{border-top:4px solid var(--blue)}.tag{font-size:12px;background:var(--mint);color:#176448;border-radius:99px;padding:5px 9px;font-weight:800}
+input,select,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:6px 0 13px;background:white;color:var(--ink)}label{font-weight:700}.hidden{display:none!important}.panel{background:white;border:1px solid var(--line);padding:18px;border-radius:16px;margin-top:15px}.chatlog{height:220px;overflow:auto;background:#f4f7fb;padding:12px;border-radius:12px;margin:10px 0}.bubble{padding:10px 12px;border-radius:12px;margin:7px 0;max-width:90%;background:#e7f0fa}.bubble.user{background:#dff7ee;margin-left:auto}.question{padding:13px 0;border-bottom:1px solid var(--line)}footer{text-align:center;padding:35px;color:var(--muted)}.small{font-size:13px}
+@media(max-width:720px){.hero{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}.hero h1{font-size:39px}}
+</style>
+</head>
+<body>
+<header><div class="logo">STUDYHUB <span>GHANA</span></div><nav><button class="alt" onclick="show('subjects')">Subjects</button><button class="alt" onclick="show('practice')">Practice</button><button onclick="show('login')">Student Login</button></nav></header>
+<main>
+<section class="hero">
+ <div><span class="badge">JHS • BECE • SHS • WASSCE</span><h1>Learn better.<br><span style="color:#ffc857">Practise smarter.</span></h1><p>Your mobile learning centre for clear lessons, practice questions, mock exams and an AI study tutor.</p><button onclick="show('join')">Unlock 30-day access</button></div>
+ <div class="pricebox"><div class="muted">STUDENT ACCESS</div><div class="price">GH₵20</div><b>30 days of learning</b><p class="muted small">Lessons • quizzes • mock exams • AI tutor with fair-use limits</p><button style="width:100%" onclick="show('join')">Get started</button></div>
+</section>
+
+<h2 class="section-title" id="subjects">Choose your learning level</h2>
+<div class="grid">
+ <article class="card subject"><div class="icon">🎒</div><span class="tag">JHS</span><h3>BECE Preparation</h3><p class="muted">Build confidence with subject lessons, practice and mock tests.</p><button onclick="selectLevel('JHS / BECE')">Explore JHS</button></article>
+ <article class="card subject"><div class="icon">🎓</div><span class="tag">SHS</span><h3>WASSCE Preparation</h3><p class="muted">Revise topics, test your knowledge and track your progress.</p><button onclick="selectLevel('SHS / WASSCE')">Explore SHS</button></article>
+ <article class="card"><div class="icon">🤖</div><h3>AI Study Tutor</h3><p class="muted">Ask for explanations, examples and guided steps.</p><button onclick="show('tutor')">Open tutor</button></article>
+</div>
+
+<h2 class="section-title">Learning tools</h2>
+<div class="grid">
+ <div class="card"><div class="icon">📘</div><h3>Topic-by-topic lessons</h3><p class="muted">Structured lessons and worked examples, organised by level and subject.</p></div>
+ <div class="card"><div class="icon">✍️</div><h3>Practice questions</h3><p class="muted">Multiple-choice and written practice with explanations.</p></div>
+ <div class="card"><div class="icon">⏱️</div><h3>Timed mock exams</h3><p class="muted">Exam-style practice with automatic objective marking.</p></div>
+ <div class="card"><div class="icon">📈</div><h3>Progress tracking</h3><p class="muted">See scores, completed topics and areas to improve.</p></div>
+</div>
+
+<section id="join" class="panel hidden">
+<h2>Start learning — GH₵20 / 30 days</h2><p class="muted">Create your student account. Payment activation will be enabled after the secure backend and MoMo verification are connected.</p>
+<label>Full name</label><input placeholder="Your full name"><label>Email or phone number</label><input placeholder="Email or phone"><label>Create password</label><input type="password" placeholder="Choose a password"><label>Learning level</label><select id="level"><option>JHS / BECE</option><option>SHS / WASSCE</option></select><button onclick="alert('This is a preview. Student registration and payment activation need backend setup before launch.')">Continue</button>
+</section>
+<section id="login" class="panel hidden"><h2>Student login</h2><label>Email or phone</label><input placeholder="Email or phone"><label>Password</label><input type="password" placeholder="Password"><button onclick="alert('Student login will work once the secure backend is connected.')">Log in</button></section>
+<section id="practice" class="panel hidden"><h2>Quick practice demo</h2><p>What is 3/4 expressed as a percentage?</p><div class="question"><label><input type="radio" name="q" value="25" style="width:auto"> 25%</label></div><div class="question"><label><input type="radio" name="q" value="75" style="width:auto"> 75%</label></div><div class="question"><label><input type="radio" name="q" value="80" style="width:auto"> 80%</label></div><button onclick="let a=document.querySelector('input[name=q]:checked');alert(!a?'Choose an answer first.':a.value==='75'?'Correct! 3 ÷ 4 × 100 = 75%.':'Not quite. Divide 3 by 4, then multiply by 100.')">Check answer</button></section>
+<section id="tutor" class="panel hidden"><h2>AI Study Tutor</h2><p class="muted">Ask a question and get a clear, step-by-step explanation. AI responses require a securely configured AI service before launch.</p><div class="chatlog" id="chatlog"><div class="bubble">Hello! I can help explain a topic, solve a maths problem step by step, or create practice questions.</div></div><textarea id="ask" rows="2" placeholder="Type your study question..."></textarea><button onclick="let v=document.getElementById('ask').value.trim();if(v){let d=document.createElement('div');d.className='bubble user';d.textContent=v;document.getElementById('chatlog').append(d);let r=document.createElement('div');r.className='bubble';r.textContent='AI tutor preview: the live tutor will answer once the secure AI service is connected.';document.getElementById('chatlog').append(r);document.getElementById('ask').value=''}">Send question</button></section>
+<div class="card small"><b>Learning quality promise:</b> Curriculum-aligned content should be checked against trusted Ghana Education Service / NaCCA materials. AI-generated explanations will be labelled and reviewed before being treated as official answers.</div>
+</main>
+<footer>STUDYHUB GHANA • Learn Better. Practise Smarter. Achieve More.</footer>
+<script>
+function show(id){document.querySelectorAll('main>section.panel').forEach(x=>x.classList.add('hidden'));let el=document.getElementById(id);if(el)el.classList.remove('hidden');if(id==='subjects')document.getElementById('subjects').scrollIntoView({behavior:'smooth'});else if(el)el.scrollIntoView({behavior:'smooth'});}
+function selectLevel(v){document.getElementById('level').value=v;show('join')}
+</script>
+</body></html>
